@@ -5,7 +5,8 @@ import { SliderComponent } from './slider/slider.component';
 import { TopDealsComponent } from './top-deals/top-deals.component';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductService } from './products.service';
-
+import { FormsModule } from '@angular/forms';
+import {ProductFilterPipe } from './productDataPipe'
 
 
 
@@ -13,11 +14,13 @@ import { ProductService } from './products.service';
   declarations: [
     ProductlistComponent,
     SliderComponent,
-    TopDealsComponent
+    TopDealsComponent,
+    ProductFilterPipe
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    FormsModule
   ],
   providers: [ProductService],
 })

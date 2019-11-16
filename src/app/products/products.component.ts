@@ -10,6 +10,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 
 export class ProductlistComponent{
     pageTitle:string = "Product List";
+    listFilter:string = '';
     products:Iproduct[];
     constructor(private _prodObj:ProductService,private _activatedRoute:ActivatedRoute, private _navi:Router){
         //this.products = _prodObj.getData();

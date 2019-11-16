@@ -7,6 +7,10 @@
                         {{ pageTitle }}
                     </div>
                     <div class="panel-body">
+                        <div>
+                            <input type="text" [(ngModel)] = "listFilter"> Filtered By:{{listFilter}}
+                        </div>
+
                         <div class="table table-responsive">
                             <table class="table" *ngIf='products && products.length'>
                                 <thead>
@@ -18,7 +22,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let tempProd of products">
+                                    <tr *ngFor="let tempProd of products|ProductFilter:listFilter">
                                         <td>{{tempProd.productName}}</td>
                                         <td>{{tempProd.productCode}}</td>
                                         <td>{{tempProd.prodPrice}}</td>
