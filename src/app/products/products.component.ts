@@ -12,6 +12,7 @@ export class ProductlistComponent{
     pageTitle:string = "Product List";
     listFilter:string = '';
     products:Iproduct[];
+    discount:number = 20;
     constructor(private _prodObj:ProductService,private _activatedRoute:ActivatedRoute, private _navi:Router){
         //this.products = _prodObj.getData();
     }

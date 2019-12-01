@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+//import { OfferPriceComponent } from './offer-price/offer-price.component';
 
 @NgModule({
   declarations: [

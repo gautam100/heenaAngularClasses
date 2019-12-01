@@ -7,7 +7,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductService } from './products.service';
 import { FormsModule } from '@angular/forms';
 import {ProductFilterPipe } from './productDataPipe'
-
+import { OfferPriceComponent } from '../offer-price/offer-price.component';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import {ProductFilterPipe } from './productDataPipe'
     ProductlistComponent,
     SliderComponent,
     TopDealsComponent,
-    ProductFilterPipe
+    ProductFilterPipe,
+    OfferPriceComponent
   ],
   imports: [
     CommonModule,
