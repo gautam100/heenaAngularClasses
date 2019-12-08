@@ -11,6 +11,8 @@
                             <input type="text" [(ngModel)] = "listFilter"> Filtered By:{{listFilter}}
                         </div>
 
+                        <div class="alert alert-success" *ngIf="userClickMsg">{{userClickMsg}}</div>
+
                         <div class="table table-responsive">
                             <table class="table" *ngIf='products && products.length'>
                                 <thead>
@@ -31,7 +33,11 @@
                                         <td>{{tempProd.prodPrice}}</td>
                                         <td>{{ discount }}%</td>
                                         <td>
-                                            <app-offer-price [MRP]="tempProd.prodPrice" [prodDiscount]="discount"></app-offer-price>
+                                            <app-offer-price 
+                                            [MRP]="tempProd.prodPrice" 
+                                            [prodDiscount]="discount" 
+                                            (offerPriceClicked)='onOfferPriceClicked($event)'>
+                                        </app-offer-price>
                                         </td>
                                     </tr>
                                 </tbody>

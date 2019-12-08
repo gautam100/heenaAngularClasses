@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Output } from "@angular/core";
+import { Component, OnInit, Input, OnChanges, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-offer-price',
@@ -11,6 +12,8 @@ export class OfferPriceComponent implements OnInit {
   @Input() prodDiscount:number;
   offerPrice:number;
 
+  @Output() offerPriceClicked:EventEmitter<String> = new EventEmitter<String>();
+  
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +21,10 @@ export class OfferPriceComponent implements OnInit {
 
   ngOnChanges():void{
     this.offerPrice = this.MRP - (this.MRP *(this.prodDiscount/100));
+  }
+
+  userClick():void{
+    this.offerPriceClicked.emit(`clicked on ${this.MRP}`);
   }
 
 }
